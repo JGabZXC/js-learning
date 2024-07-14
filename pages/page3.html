@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/pages.css">
+    <link rel="stylesheet" href="../assets/css/prism.css">
+    <title>Loops</title>
+</head>
+
+<body>
+    <header>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+        </ul>
+    </header>
+    <main>
+        <section class="container">
+            <h1 class="title">For Loop</h1>
+            <p class="description">a control flow statement that allows you to execute a block of code repeatedly</p>
+        </section>
+        <section class="container">
+            <div class="p-tb-m">
+                <h4>Syntax</h4>
+                <pre class="line-numbers">
+                    <code class="language-javascript">
+                        // for loop keeps running while condition is TRUE
+                        for(initial value; logical condition; increment/decrement) {
+                            // code block to be executed
+                        }
+                    </code>
+                </pre>
+            </div>
+            <div class="p-tb-m">
+                <h4>Example Code</h4>
+                <pre class="line-numbers">
+                    <code class="language-javascript">
+                        for(let i = 1; i <= 10; i++) {
+                            console.log(`Lifting weights repetition ${i} 🏋️‍♂️`);
+                        }
+                    </code>
+                </pre>
+            </div>
+            <!-- Looping Arrays, Breaking and Continuing -->
+            <div class="p-tb-m">
+                <h1>Looping Arrays</h1>
+                <div class="p-tb-m">
+                    <h4>Example Code</h4>
+                    <pre class="line-numbers">
+                        <code class="language-javascript">
+                            const gab = [
+                                'gab',
+                                'lopez',
+                                2003,
+                                'student'
+                            ];
+
+                            for(let i = 0; i < gab.length; i++) {
+                                console.log(gab[i]);
+                            }
+                        </code>
+                    </pre>
+                </div>
+                <div class="p-tb-m">
+                    <h2>Creating an array</h2>
+                    <div class="p-tb-m">
+                        <h4>Example Code</h4>
+                        <pre class="line-numbers">
+                            <code class="language-javascript">
+                                const types = [];
+                                const gab = [
+                                    'gab',
+                                    'lopez',
+                                    2003,
+                                    'student'
+                                ];
+                                for(let i = 0; i < gab.length; i++) {
+                                    // Reading from gab array
+                                    console.log(gab[i]);
+                                    // Filling types array
+                                    types[i] = typeof gab[i];
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                    <div class="p-tb-m">
+                        <h4>Example Code</h4>
+                        <pre class="line-numbers">
+                            <code class="language-javascript">
+                                const types = [];
+    
+                                const gab = [
+                                    'gab',
+                                    'lopez',
+                                    2003,
+                                    'student'
+                                ];
+    
+                                for(let i = 0; i < gab.length; i++) {
+                                    console.log(gab[i]);
+                                    types.push(typeof gab[i]);
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+                <div class="p-tb-m">
+                    <h1>Practical Example</h1>
+                    <div class="p-tb-m">
+                        <h4>Example Code</h4>
+                        <pre class="line-numbers">
+                            <code class="language-javascript">
+                                const years = [1991, 2007, 1969, 2020];
+                                const ages = [];
+
+                                for(let i = 0; i < years.length; i++) {
+                                    ages.push(2037 - years[i]);
+                                }
+
+                                console.log(ages); // Log the ages array
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="container">
+            <h1>Looping Backwards and Loops in Loops</h1>
+            <div class="p-tb-m">
+                <h3>Example Code</h3>
+                <pre class="line-numbers">
+                    <code class="language-javascript">
+                        const gab = [
+                            'gab',
+                            'lopez',
+                            2003,
+                            'student',
+                            ['Friend1','Friend2','Friend3']
+                        ];
+
+                        for(let i = gab.length - 1; i >= 0; i-- ) {
+                            console.log(i, gab[i]);
+                        }
+                    </code>
+                </pre>
+            </div>
+            <div class="p-tb-m">
+                <h3>Loops in Loops</h3>
+                <pre class="line-numbers">
+                    <code class="language-javascript">
+                        const gab = [
+                            'gab',
+                            'lopez',
+                            2003,
+                            'student',
+                            ['Friend1','Friend2','Friend3']
+                        ];
+
+                        for(let i = gab.length - 1; i >= 0; i-- ) {
+                            console.log(i, gab[i]);
+                        }
+
+                        for(let exercise = 1; exercise < 4; exercise++) {
+                            console.log(`--------- Starting  exercise ${exercise}`);
+
+                            for(let rep = 1; rep < 6; rep++) {
+                                console.log(`Lifting weight repetition ${rep} 🏋️‍♂️`);
+                            }
+                        }
+                    </code>
+                </pre>
+            </div>
+        </section>
+    </main>
+
+    <script src="../assets/js/prism.js"></script>
+</body>
+
+</html>l

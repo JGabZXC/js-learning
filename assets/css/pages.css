@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --ff: "Montserrat", sans-serif;
+
+    --fc-primary: #EEEEEE;
+
+    --fc-1: #686D76;
+    --fc-2: #373A40;
+    --fc-3: #4D4D4D;
+    --fc-4: #FF6000;
+
+    --fc-accent-1: #DC5F00;
+
+    --bg: #151515;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* -------------------------- GLOBAL --------------------------*/
+ul {
+    color: var(--fc-primary);
+}
+
+h1 {
+    font-size: 1.95rem;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--fc-1);
+}
+
+.container ul li,
+.container ol li {
+    margin-left: 20px;
+}
+
+.default-topo {
+    padding-top: 10px;
+    font-size: 18px;
+}
+
+.code-highlight {
+    font-family: monospace;
+    background-color: var(--fc-2);
+    padding: 1px 5px;
+    color: var(--fc-4);
+}
+
+.head2 {
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.p-tb-s {
+    padding-block: 10px;
+}
+
+.p-tb-m {
+    padding-block: 20px;
+}
+
+.p-tb-l {
+    padding-block: 40px;
+}
+
+/* ------------- BODY ------------- */
+
+body {
+    background-color: var(--bg);
+    font-family: var(--ff);
+}
+
+/* ------------- MAIN ------------- */
+.container {
+    width: min(980px, 95%);
+    margin: 0 auto;
+    color: var(--fc-primary);
+    padding-block: 10px;
+}

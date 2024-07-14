@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/pages.css">
+    <link rel="stylesheet" href="../assets/css/prism.css">
+    <title>Continue and Break</title>
+</head>
+
+<body>
+    <header>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+        </ul>
+    </header>
+    <main>
+        <section class="container">
+            <h1 class="title">Continue and Break</h1>
+            <p class="description">Loop</p>
+        </section>
+        <section class="container">
+            <div class="p-tb-m">
+                <h3>Example Code</h3>
+                <pre class="line-numbers">
+                    <code class="language-javascript">
+                        const gab = [
+                            'gab',
+                            'lopez',
+                            2003,
+                            'student'
+                        ];
+
+                        for(let i = 0; i < gab.length; i++) {
+                            console.log(gab[i]);
+                        }
+                    </code>
+                </pre>
+            </div>
+            <div class="p-tb-m">
+                <h1>Practical Example</h1>
+                <div class="p-tb-m">
+                    <h2>Example Code (Continue)</h2>
+                    <pre class="line-numbers">
+                        <code class="language-javascript">
+                            const gab = [
+                                'gab',
+                                'lopez',
+                                2003,
+                                'student'
+                            ];
+    
+                            for(let i = 0; i < gab.length; i++) {
+                                if(typeof gab[i] !== 'string') continue; // Skip all data types that is not a string
+                                console.log(gab[i], typeof gab[i]);
+                            }
+                        </code>
+                    </pre>
+                </div>
+                <div class="p-tb-m">
+                    <h2>Example Code (Break)</h2>
+                    <pre class="line-numbers">
+                        <code class="language-javascript">
+                            const gab = [
+                                'gab',
+                                'lopez',
+                                2003,
+                                'student'
+                            ];
+    
+                            for(let i = 0; i < gab.length; i++) {
+                                if(typeof gab[i] !== 'number') break; // First number data types is reached the for loops will break/stopped the iteration
+                                console.log(gab[i], typeof gab[i]);
+                            }
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="../assets/js/prism.js"></script>
+</body>
+
+</html>l

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/pages.css">
+    <link rel="stylesheet" href="../assets/css/prism.css">
+    <title>Object Methods</title>
+</head>
+
+<body>
+    <header>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+        </ul>
+    </header>
+    <main>
+        <section class="container">
+            <h1 class="title">Object Method</h1>
+            <p class="description">Object</p>
+        </section>
+        <section class="container">
+            <div class="p-tb-m">
+                <h3>Example Code</h3>
+                <pre class="line-numbers">
+                    <code class="language-javascript">
+                        const gab = {
+                            firstName: 'gab',
+                            lastName: 'lopez',
+                            birthYear: 2003,
+                            job: student,
+                            hasDriversLicense: false,
+                            calcAge: function(birthYear) {
+                                return 2037 - birthYear;
+                            }
+                        };
+                    </code>
+                </pre>
+            </div>
+
+            <div class="p-tb-m content">
+                <h2 class="head2">Object Method</h2>
+                <p class="default-topo">Methods are used to perform actions on the object or to manipulate its
+                    properties. They can be defined directly in the object literal or added later using dot or bracket
+                    notation.</p>
+                <p class="default-topo"><strong>Tip</strong>: Any function that is attached in object is called method
+                </p>
+
+                <div class="p-tb-m">
+                    <h3>Accessing the <span class="code-highlight">calcAge</span> property or method</h3>
+                    <pre class="line-numbers">
+                        <code class="language-javascript">
+                            gab.calcAge(2003); // Dot Notation
+                            gab["calcAge"](2003); // Bracket Notation
+                        </code>
+                    </pre>
+                </div>
+
+                <div class="p-tb-m">
+                    <h3>Making the <span class="code-highlight">calcAge</span> calculate the <span
+                            class="code-highlight">gab.birthYear</span> instead of typing it in arguments</h3>
+                    <pre class="line-numbers">
+                        <code class="language-javascript">
+                            // Change the <span class="code-highlight">calcAge</span> method in <span class="code-highlight">gab</span> object
+                            calcAge: function() {
+                                return 2037 - this.birthYear; // The 'this' refers to that object(gab)
+                            };
+                        </code>
+                    </pre>
+                    <pre class="line-numbers">
+                        <code class="language-javascript">
+                            console.log(gab.calcAge());
+                        </code>
+                    </pre>
+                </div>
+
+                <div class="p-tb-m">
+                    <p>We can also add a property using <span class="code-highlight">this</span></p>
+                    <div class="p-tb-m">
+                        <h4>Syntax</h4>
+                        <pre class="line-numbers">
+                            <code class="language-javascript">
+                                calcAge: function(birthYear) {
+                                    this.age = 2037 - birthYear; // Create new property
+                                    return this.age;
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+
+                <div class="p-tb-m">
+                    <h2 class="head2">Challenge</h2>
+                    <p class="default-topo">Create a method called <span class="code-highlight">getSummary</span> and
+                        this method should return a string that summarize the data about <span
+                            class="code-highlight">gab</span></p>
+                    <p><strong>Tip</strong>: Use a Conditional(Ternary) operator</p>
+                    <pre class="line-numbers">
+                        <code class="language-javascript">
+                            // If hasDriversLicense is true
+                            gab is a 21-year old student and he has a driver license // Output should be like this
+                            // If hasDriversLicense is false
+                            gab is a 21-year old student and he has no driver license // Output should be like this
+                        </code>
+                    </pre>
+                    <div class="p-tb-m">
+                        <h3>Code for the Challenge</h3>
+                        <pre class="line-numbers">
+                            <code class="language-javascript">
+                                const gab = {
+                                    firstName: 'gab',
+                                    lastName: 'lopez',
+                                    birthYear: 2003,
+                                    job: 'student',
+                                    hasDriversLicense: false, // Change to true to check if hasDriversLicense
+                                    calcAge: function() {
+                                        this.age = 2024 - this.birthYear;
+                                        return this.age;
+                                    },
+                                
+                                    // Add getSummary method
+                                    getSummary: function() {
+                                        return `${this.firstName} is a ${this.calcAge()}-year old ${this.job} and he has ${this.hasDriversLicense ? 'a' : 'no'} driver license`;
+                                    }
+                                };
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="../assets/js/prism.js"></script>
+</body>
+
+</html>

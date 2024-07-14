@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/pages.css">
+    <link rel="stylesheet" href="../assets/css/prism.css">
+    <title>Dot vs Bracket Notation</title>
+</head>
+<body>
+    <header>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+        </ul>
+    </header>
+
+    <main>
+        <section class="container">
+            <h1 class="title">Dot vs Bracket Notation</h1>
+            <p class="description">Object</p>
+        </section>
+        <section class="container">
+            <div class="p-tb-m">
+                <h3>Example Code</h3>
+                <pre class="line-numbers">
+                    <code class="language-javascript">
+                        const gab = {
+                            firstName: 'gab',
+                            lastName: 'lopez',
+                            age: 2024 - 2003
+                        };
+                    </code>
+                </pre>
+            </div>
+
+            <!-- Dot Notation -->
+            <div class="p-tb-m content">
+                <h2 class="head2">The Dot Notation</h2>
+                <p class="default-topo">Dot Notation is a way to <u>access</u> the properties and methods of an object. It uses a <u>period (dot)</u> to connect the object name with the property or method name</p>
+                <div class="p-tb-m">
+                    <h4>Syntax</h4>
+                    <pre class="line-numbers">
+                        <code class="language-javascript">
+                            objectName.propertyName
+                        </code>
+                    </pre>
+                </div>
+                <div class="p-tb-m">
+                    <h4>Example</h4>
+                    <pre class="line-numbers">
+                        <code class="language-javascript">
+                            gab.firstName;
+                        </code>
+                    </pre>
+                </div>
+                <div class="p-tb-m">
+                    <h3>How Dot Notation Works</h3>
+                    <ul>
+                        <li class="default-topo">The dot is an operator that accesses the object and retrieves the property with the specified name.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bracket Notation -->
+            <div class="p-tb-m content">
+                <h2 class="head2">The Bracket Notation</h2>
+                <p class="default-topo">Bracket Notation can handle property names <u>that are not valid</u> JavaScript identifiers (like those with spaces, special characters, or reserved words). It also allows the use of <u>variables</u> to dynamically access properties.</p>
+                <div class="p-tb-m">
+                    <h4>Syntax</h4>
+                    <pre class="line-numbers">
+                        <code class="language-javascript">
+                            objectName["propertyName"]
+                        </code>
+                    </pre>
+                </div>
+                <div class="p-tb-m">
+                    <h4>Example</h4>
+                    <pre class="line-numbers">
+                        <code class="language-javascript">
+                            gab["firstName"]
+                        </code>
+                    </pre>
+                </div>
+                <div class="p-tb-m">
+                    <h4>Another Example</h4>
+                    <pre class="line-numbers">
+                        <code class="language-javascript">
+                            const nameKey = 'Name';
+
+                            console.log(gab["first" + nameKey]);
+                            console.log(gab["last" + nameKey]);
+                        </code>
+                    </pre>
+                    <h5>How does it work</h5>
+                    <ul>
+                        <li class="default-topo">JavaScript will start executing first the code inside the bracket and it will create a string then it will go to <span class="code-highlight">gab</span> object and retrieve that property</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Adding -->
+            <div class="p-tb-m content">
+                <h2 class="head2">Adding Property to Object</h2>
+                <div class="p-tb-m">
+                    <h4>Syntax</h4>
+                    <pre class="line-numbers">
+                        <code class="language-javascript">
+                            gab.location = "Philippines"; // Dot Notation
+                            gab["location"] = "Philippines"; // Bracket Notation
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <!-- When Do We Use -->
+            <div class="p-tb-m content">
+                <h2 class="head2">When do we use Bracket and Dot Notation?</h2>
+                <div class="p-tb-m">
+                    <h3>Dot Notation</h3>
+                    <ol>
+                        <li class="default-topo">Property Names are Valid JavaScript Identifiers:
+                            <ul>
+                                <li class="default-topo">The property name must start with a letter, underscore (_), or dollar sign ($) and can contain alphanumeric characters, underscores, and dollar signs.</li>
+                                <li>Examples: obj.property, obj._property, obj.$property.</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+                <div class="p-tb-m">
+                    <h3>Bracket Notation</h3>
+                    <ol>
+                        <li class="default-topo">Property Names Contain Spaces or Special Characters:
+                            <ul>
+                                <li class="default-topo">If a property name includes spaces, hyphens, or other special characters, you must use bracket notation.</li>
+                            </ul>
+                        </li>
+                        <li class="default-topo">Property Names are Reserved Words:
+                            <ul>
+                                <li class="default-topo">If a property name is a reserved word in JavaScript, bracket notation is used to avoid syntax errors.</li>
+                            </ul>
+                        </li>
+                        <li class="default-topo">Dynamic Property Names:
+                            <ul>
+                                <li class="default-topo">When the property name is stored in a variable or needs to be computed dynamically, bracket notation is necessary.</li>
+                            </ul>
+                        </li>
+                        <li class="default-topo">Property Names are Not Known Until Runtime:
+                            <ul>
+                                <li class="default-topo">If the property names are determined at runtime, you need to use bracket notation.</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Conclusion -->
+            <div class="p-tb-m content">
+                <h2 class="head2">Conclusion</h2>
+                <ul>
+                    <li class="default-topo">We can put any expression in the square brackets(Bracket Notation),</li>
+                    <li>but we can't do the same with dot(Dot Notation)</li>
+                    <li>Accessing the property name in Dot Notation by using <u>real property name</u> and not a computed property name</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <script src="../assets/js/prism.js"></script>
+</body>
+</html>
